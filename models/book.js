@@ -15,3 +15,5 @@ class Book {
     this.anoLancamento = anoLancamento
   }
 }
+
+module.exports = Book
