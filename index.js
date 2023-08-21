@@ -6,6 +6,7 @@ const express = require('express')
 const cors = require('cors')
 const config = require('./conf/config')
 const bookRoutes = require('./routes/book-routes')
+const authorRoutes = require('./routes/author-routes')
 
 // inicializano o 'Express'
 const app = express()
@@ -20,6 +21,7 @@ app.use(cors())
 // definindo a utilização do roteador
 // para o recurso 'books'
 app.use('/api', bookRoutes.routes)
+app.use('/api', authorRoutes.routes)
 
 // definindo a porta da aplicação
 app.listen(config.port, () => {
