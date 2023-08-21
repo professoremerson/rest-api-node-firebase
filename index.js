@@ -23,7 +23,7 @@ app.use(cors())
 // para o recurso 'books'
 app.use('/api', bookRoutes.routes)
 app.use('/api', authorRoutes.routes)
-app.use('/api', publisherRoutesRoutes.routes)
+app.use('/api', publisherRoutes.routes)
 
 // definindo a porta da aplicação
 app.listen(config.port, () => {

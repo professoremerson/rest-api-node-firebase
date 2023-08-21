@@ -7,7 +7,7 @@ const Author = require('../models/author')
 
 // fazendo a chamada para inicializar o
 // Firebase
-const firestore = firebase.firestore
+const firestore = firebase.firestore()
 
 // criando o método para adicionar um novo
 // autor (POST)

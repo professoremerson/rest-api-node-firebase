@@ -7,7 +7,7 @@ const Publisher = require('../models/publisher')
 
 // fazendo a chamada para inicializar o
 // Firebase
-const firestore = firebase.firestore
+const firestore = firebase.firestore()
 
 // criando o método para adicionar uma nova
 // editora (POST)
