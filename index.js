@@ -21,7 +21,7 @@ app.use(cors())
 
 // definindo a utilização do roteador
 // para o recurso 'books'
-app.use('/api', bookRoutes.routes)
+app.use('/api/books', bookRoutes)
 app.use('/api', authorRoutes.routes)
 app.use('/api', publisherRoutes.routes)
 

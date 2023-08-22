@@ -1,29 +1,23 @@
+// definindo o strict mode
+'use strict'
+
 // realizando as importações
 const express = require('express')
-const { 
-  addBook,
-  getAllBooks,
-  getBook,
-  updateBook,
-  deleteBook
-} = require('../controllers/bookController')
+const controller = require('../controllers/bookController')
 
 // inicializando o serviço de roteamento
 // do 'Express'
 const router = express.Router()
 
-// criando as rotas para o 'resouce' Books
-// rota para listar todos os livros
-router.get('/books', getAllBooks)
-// rota para listar um livro específico
-router.get('/books/:id', getBook)
-// rota para cadastrar um novo livro
-router.post('/books', addBook)
-// rota para atualizar um livro específico
-router.put('/books/:id', updateBook)
-// rota para excluir um livro específico
-router.delete('/books/:id', deleteBook)
+// instanciando um novo objeto da classe 'controller'
+let _ctrl = new controller()
 
-module.exports = {
-  routes : router
-}
+// definindo as rotas
+router.get('/', _ctrl.get)
+router.get('/:id', _ctrl.getById)
+router.post('/', _ctrl.post)
+router.put('/:id', _ctrl.put)
+router.delete('/:id', _ctrl.delete)
+
+// exportando o módulo
+module.exports = router
